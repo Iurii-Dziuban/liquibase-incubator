@@ -1,0 +1,52 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+
+    <!-- 1. mvn liquibase:update to run migrations-->
+    <!-- 2. mvn liquibase:generateChangeLog to generate migration file based on existing db-->
+
+    <!-- Different examples of change sets http://www.liquibase.org/tutorial-using-oracle -->
+
+    <!-- SQL database independent example -->
+    <changeSet id="001" author="${mainAuthor}" context="test, production">
+        <preConditions>
+            <dbms type="h2" />
+        </preConditions>
+        <comment>New table transitions is created</comment>
+        <createTable tableName="transactions">
+            <column name="id" type="int">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <rollback>
+            <dropTable tableName="transactions"/>
+        </rollback>
+    </changeSet>
+
+    <!-- SQL database dependent example -->
+    <changeSet id="002" author="Misha" failOnError="true" runInTransaction="true" context="test, production">
+        <preConditions>
+            <tableExists tableName="transactions" />
+        </preConditions>
+        <sql>
+            ALTER TABLE transactions ADD COLUMN date VARCHAR(20);
+        </sql>
+        <rollback/>
+    </changeSet>
+
+    <!-- Alternative  using sql database independent api for 002 migration-->
+    <!-- <changeSet author="Misha" id="002" context="test, production">
+        <addColumn tableName="transactions">
+            <column name="date" type="varchar(20)" />
+        </addColumn>
+    </changeSet> -->
+
+    <include file="liquibase/db.changelog-included.xml"/>
+
+</databaseChangeLog>
