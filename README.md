@@ -1,4 +1,6 @@
 # liquibase-incubator
+[![Build Status](https://travis-ci.org/Iurii-Dziuban/liquibase-incubator.svg?branch=master)](https://travis-ci.org/Iurii-Dziuban/liquibase-incubator)
+
 A project with demo of liquibase capabilities with spring framework based on http://www.liquibase.org/documentation/spring.html
 
 H2 database is used in demo samples because of ease of use
