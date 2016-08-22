@@ -1,4 +1,6 @@
 # liquibase-incubator
+[![Open Source Love](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badge/)    
+
 [![Build Status](https://travis-ci.org/Iurii-Dziuban/liquibase-incubator.svg?branch=master)](https://travis-ci.org/Iurii-Dziuban/liquibase-incubator)
 [![Coverage Status](https://coveralls.io/repos/github/Iurii-Dziuban/liquibase-incubator/badge.svg?branch=master)](https://coveralls.io/github/Iurii-Dziuban/liquibase-incubator?branch=master)
 <a href="https://scan.coverity.com/projects/iurii-dziuban-liquibase-incubator">
