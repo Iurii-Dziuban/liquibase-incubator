@@ -7,6 +7,7 @@
 </a>
 [![Issue Count](https://codeclimate.com/github/Iurii-Dziuban/liquibase-incubator/badges/issue_count.svg)](https://codeclimate.com/github/Iurii-Dziuban/liquibase-incubator)
 [![Dependency Status](https://www.versioneye.com/user/projects/57b8ae91fc18270041a9aa9c/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/57b8ae91fc18270041a9aa9c)
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/Iurii-Dziuban/liquibase-incubator/issues)
 
 A project with demo of liquibase capabilities with spring framework based on http://www.liquibase.org/documentation/spring.html
 
