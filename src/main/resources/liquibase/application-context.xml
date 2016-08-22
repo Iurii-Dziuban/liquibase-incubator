@@ -21,12 +21,21 @@
         <property name="contexts" value="test, production" />
         <!-- Change to false if no running needed -->
         <property name="shouldRun" value="true" />
-        <!-- Parameters for change log -->
+        <!-- Parameters for change log to be inserted instead of placeholders-->
         <property name="changeLogParameters">
             <util:map>
                 <entry key="mainAuthor" value="Iurii" />
             </util:map>
         </property>
+        <!-- Rollback file to be generated -->
+        <property name="rollbackFile" value="file:target/rollback.txt" />
+        <!-- Schema to use -->
+        <property name="defaultSchema" value="PUBLIC" />
+        <!-- Uncomment for tag example-->
+        <!-- <property name="tag" value="1.0" /> -->
+        <property name="beanName" value="springLiquibase" />
+        <!-- by default true -->
+        <property name="ignoreClasspathPrefix" value="true" />
     </bean>
 
 </beans>

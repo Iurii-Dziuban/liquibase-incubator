@@ -16,7 +16,13 @@ Resources
 - Log4j configuration under `src/main/resources/log4j.xml`
 
 # Pom.xml
-Libraries: liquibase, spring framework, spring jdbc for spring jdbc migrations, commons-dbcp2 for database connection pool, h2 file based database for ease of db usage, log4j logging (possibility to configure) via slf4j.
+Libraries:
+- liquibase
+- spring framework
+- spring jdbc for spring jdbc migrations
+- commons-dbcp2 for database connection pool
+- h2 file based database for ease of db usage
+- log4j logging (possibility to configure) via slf4j
 
 # Building project
 `mvn clean install`
@@ -25,7 +31,6 @@ Libraries: liquibase, spring framework, spring jdbc for spring jdbc migrations, 
 Samples are located under `src/main/java/org.liquibase.samples` directly
 
 - LiquibaseSpringExample
-
 No parameters required. Just run the main method in the class
 
 `Comments in the files and logging should be sufficient to play with samples to see results and experiment with sql migrations`
