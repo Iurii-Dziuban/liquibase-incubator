@@ -49,14 +49,14 @@
             <version>${spring-version}</version>
         </dependency>
 
-        <!-- Datasource connections pool used in all db related samples-->
+        <!-- Datasource connections pool used in all db related org.liquibase.samples-->
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-dbcp2</artifactId>
             <version>2.1.1</version>
         </dependency>
 
-        <!-- In memory h2 database used in all db samples-->
+        <!-- In memory h2 database used in all db org.liquibase.samples-->
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
@@ -82,6 +82,21 @@
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-log4j12</artifactId>
             <version>1.7.21</version>
+        </dependency>
+
+        <!-- Junit -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>4.3.2.RELEASE</version>
+            <scope>test</scope>
         </dependency>
 
     </dependencies>

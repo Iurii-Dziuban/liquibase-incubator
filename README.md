@@ -10,15 +10,15 @@
 
 A project with demo of liquibase capabilities with spring framework based on http://www.liquibase.org/documentation/spring.html
 
-H2 database is used in demo samples because of ease of use
+H2 database is used in demo org.liquibase.samples because of ease of use
 
 # Project structure
 Project structure is simple. Basically it is a maven project:
-- Samples under `src/main/java/org.liquibase.samples`
+- Samples under `src/main/java/org.liquibase.org.liquibase.samples`
 
 Resources
 - DB scripts with test tables and data `src/main/resources/db-scripts`
-- Spring application contexts used in the samples under `src/main/resources/liquibase`
+- Spring application contexts used in the org.liquibase.samples under `src/main/resources/liquibase`
 - Liquibase properties under `src/main/resources/liquibase` used by changelog `datasetChangeLog.xml` and additional changelog file db.changelog-included.xml
 - Log4j configuration under `src/main/resources/log4j.xml`
 
@@ -34,13 +34,13 @@ Libraries:
 # Building project
 `mvn clean install`
 
-# Running samples
-Samples are located under `src/main/java/org.liquibase.samples` directly
+# Running org.liquibase.samples
+Samples are located under `src/main/java/org.liquibase.org.liquibase.samples` directly
 
 - LiquibaseSpringExample
 No parameters required. Just run the main method in the class
 
-`Comments in the files and logging should be sufficient to play with samples to see results and experiment with sql migrations`
+`Comments in the files and logging should be sufficient to play with org.liquibase.samples to see results and experiment with sql migrations`
 
 # Features
 - Liquibase maven plugin usage
