@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <bean id="dataSource"
+          class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
+        <property name="driverClassName"><value>org.h2.Driver</value></property>
+        <property name="url"><value>jdbc:h2:./db/liquibaseSpringDb</value></property>
+        <property name="username"><value>sa</value></property>
+        <property name="password"><value></value></property>
+        <property name="maxIdle"><value>1</value></property>
+    </bean>
+
+    <bean class="liquibase.integration.spring.SpringLiquibase" >
+        <!-- to drop db. change to false not to drop and execute migrations if needed-->
+        <property name="dropFirst" value="true" />
+        <property name="changeLog" value="classpath:liquibase/groovy/datasetChangeLog.groovy" />
+        <property name="dataSource" ref="dataSource" />
+        <!-- Change contexts to different value so some changes will not be running-->
+        <property name="contexts" value="test, production" />
+        <!-- Change to false if no running needed -->
+        <property name="shouldRun" value="true" />
+        <!-- Parameters for change log to be inserted instead of placeholders-->
+        <property name="changeLogParameters">
+            <util:map>
+                <entry key="mainAuthor" value="Iurii" />
+            </util:map>
+        </property>
+        <!-- Rollback file to be generated -->
+        <property name="rollbackFile" value="file:target/groovy-rollback.txt" />
+        <!-- Schema to use -->
+        <property name="defaultSchema" value="PUBLIC" />
+        <!-- Uncomment for tag example-->
+        <!-- <property name="tag" value="1.0" /> -->
+        <property name="beanName" value="springLiquibase" />
+        <!-- by default true -->
+        <property name="ignoreClasspathPrefix" value="true" />
+    </bean>
+
+</beans>

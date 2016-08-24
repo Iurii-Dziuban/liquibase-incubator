@@ -15,7 +15,7 @@
     <bean class="liquibase.integration.spring.SpringLiquibase" >
         <!-- to drop db. change to false not to drop and execute migrations if needed-->
         <property name="dropFirst" value="true" />
-        <property name="changeLog" value="classpath:liquibase/datasetChangeLog.xml" />
+        <property name="changeLog" value="classpath:liquibase/xml/datasetChangeLog.xml" />
         <property name="dataSource" ref="dataSource" />
         <!-- Change contexts to different value so some changes will not be running-->
         <property name="contexts" value="test, production" />
@@ -28,7 +28,7 @@
             </util:map>
         </property>
         <!-- Rollback file to be generated -->
-        <property name="rollbackFile" value="file:target/rollback.txt" />
+        <property name="rollbackFile" value="file:target/xml-rollback.txt" />
         <!-- Schema to use -->
         <property name="defaultSchema" value="PUBLIC" />
         <!-- Uncomment for tag example-->

@@ -51,6 +51,6 @@
         <tagDatabase tag="1.0" />
     </changeSet>
 
-    <include file="liquibase/db.changelog-included.xml"/>
+    <include file="liquibase/xml/db.changelog-included.xml"/>
 
 </databaseChangeLog>

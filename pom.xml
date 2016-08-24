@@ -84,6 +84,20 @@
             <version>1.7.21</version>
         </dependency>
 
+        <!-- groovy dsl support libraries-->
+        <dependency>
+            <groupId>org.liquibase</groupId>
+            <artifactId>liquibase-groovy-dsl</artifactId>
+            <version>1.2.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.codehaus.groovy</groupId>
+            <artifactId>groovy</artifactId>
+            <version>2.4.1</version>
+            <scope>compile</scope>
+        </dependency>
+
         <!-- Junit -->
         <dependency>
             <groupId>junit</groupId>
@@ -182,7 +196,8 @@
                 <artifactId>liquibase-maven-plugin</artifactId>
                 <version>3.5.1</version>
                 <configuration>
-                    <propertyFile>src/main/resources/liquibase/liquibase.properties</propertyFile>
+                    <!-- And a lot of other properties to configure -->
+                    <propertyFile>classpath:liquibase/xml/liquibase.properties</propertyFile>
                 </configuration>
                 <executions>
                     <execution>
