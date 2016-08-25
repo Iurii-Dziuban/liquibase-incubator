@@ -22,12 +22,14 @@ Project structure is simple. Basically it is a maven project:
 Resources
 - DB scripts with test tables and data `src/main/resources/db-scripts`
 - Spring application contexts used in the org.liquibase.samples under `src/main/resources/liquibase`
-- Liquibase properties under `src/main/resources/liquibase` used by changelog `liquibase.groovy.datasetChangeLog.xml` and additional changelog file db.changelog-included.xml
+- Liquibase properties under `src/main/resources/liquibase` used by changelog `groovy/datasetChangeLog.groovy` and `xml/datasetChangeLog.xml` additional changelog file `db.changelog-included.xml`
 - Log4j configuration under `src/main/resources/log4j.xml`
 
 # Pom.xml
 Libraries:
 - liquibase
+- liquibase groovy dsl
+- groovy
 - spring framework
 - spring jdbc for spring jdbc migrations
 - commons-dbcp2 for database connection pool
@@ -39,8 +41,8 @@ Libraries:
 
 # Demo & Features
 
-- XmlDslLiquibaseSpringTest based on xml implementation as default and declarative.
-- GroovyDslLiquibaseSpringTest based on groovy dsl implementation with power to include groovy code
+- `XmlDslLiquibaseSpringTest` based on xml implementation as default and declarative.
+- `GroovyDslLiquibaseSpringTest` based on groovy dsl implementation with power to include groovy code
 No parameters required. Just run the main method in the class
 
 `Comments in the files and logging should be sufficient to play with org.liquibase.samples to see results and experiment with sql migrations`
