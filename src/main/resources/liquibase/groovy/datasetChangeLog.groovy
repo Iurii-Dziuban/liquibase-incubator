@@ -1,5 +1,7 @@
 package liquibase.groovy
 
+// groovy dsl changelog example with writing to file, invoking java/groovy code
+
 import org.liquibase.samples.CustomLogger
 
 databaseChangeLog {
@@ -37,4 +39,6 @@ databaseChangeLog {
     changeSet (id:"tag-1.0", context: "test, production", author:"Iurii") {
         tagDatabase(tag: "1.0")
     }
+
+    include(file:"liquibase/xml/db.changelog-included.xml")
 }

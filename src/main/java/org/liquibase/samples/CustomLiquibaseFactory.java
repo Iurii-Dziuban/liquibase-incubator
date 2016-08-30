@@ -15,6 +15,7 @@ import org.springframework.context.ApplicationContext;
 import java.sql.Connection;
 
 /**
+ * Factory to create pure Liquibase instance not just SpringLiquibase
  * Created by iurii.dziuban on 24.08.2016.
  */
 public class CustomLiquibaseFactory {

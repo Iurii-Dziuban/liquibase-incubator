@@ -196,8 +196,9 @@
                 <artifactId>liquibase-maven-plugin</artifactId>
                 <version>3.5.1</version>
                 <configuration>
-                    <!-- And a lot of other properties to configure -->
+                    <!-- Config for xml. Change to 'classpath:liquibase/groovy/liquibase.properties' for groovy example-->
                     <propertyFile>classpath:liquibase/xml/liquibase.properties</propertyFile>
+                    <!-- And a lot of other properties to configure -->
                 </configuration>
                 <executions>
                     <execution>

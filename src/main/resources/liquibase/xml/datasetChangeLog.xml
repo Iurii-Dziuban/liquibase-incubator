@@ -41,6 +41,7 @@
     </changeSet>
 
     <!-- Alternative  using sql database independent api for 002 migration-->
+    
     <!-- <changeSet author="Misha" id="002" context="test, production">
         <addColumn tableName="transactions">
             <column name="date" type="varchar(20)" />
