@@ -30,13 +30,6 @@ public class CustomLiquibaseFactory {
     }
 
     private Database createDatabase(Connection c, ResourceAccessor resourceAccessor) throws DatabaseException {
-        DatabaseConnection liquibaseConnection;
-        if (c == null) {
-            liquibaseConnection = new OfflineConnection("offline:unknown", resourceAccessor);
-        } else {
-            liquibaseConnection = new JdbcConnection(c);
-        }
-        Database database = DatabaseFactory.getInstance().findCorrectDatabaseImplementation(liquibaseConnection);
-        return database;
+        return DatabaseFactory.getInstance().findCorrectDatabaseImplementation(new JdbcConnection(c));
     }
 }
