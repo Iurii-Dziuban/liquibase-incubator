@@ -11,7 +11,8 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <spring-version>4.3.2.RELEASE</spring-version>
+        <spring-version>4.3.3.RELEASE</spring-version>
+        <liquibase.version>3.5.2</liquibase.version>
     </properties>
 
     <scm>
@@ -67,7 +68,7 @@
         <dependency>
             <groupId>org.liquibase</groupId>
             <artifactId>liquibase-core</artifactId>
-            <version>3.5.1</version>
+            <version>${liquibase.version}</version>
         </dependency>
 
         <!-- log4j logger -->
@@ -109,7 +110,7 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>
-            <version>4.3.2.RELEASE</version>
+            <version>${spring-version}</version>
             <scope>test</scope>
         </dependency>
 
@@ -132,26 +133,6 @@
                 <configuration>
                     <argLine>${argLine}</argLine>
                 </configuration>
-            </plugin>
-
-            <plugin>
-                <groupId>org.jacoco</groupId>
-                <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.7.7.201606060606</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>prepare-agent</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>report</id>
-                        <phase>test</phase>
-                        <goals>
-                            <goal>report</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
 
             <plugin>
@@ -179,7 +160,10 @@
             <plugin>
                 <groupId>org.eluder.coveralls</groupId>
                 <artifactId>coveralls-maven-plugin</artifactId>
-                <version>4.2.0</version>
+                <version>4.3.0</version>
+                <configuration>
+                    <repoToken>NOcEtJIbmrdfTL2VGSaTXjOZVJGCV5r8E</repoToken>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>com.versioneye</groupId>
@@ -194,7 +178,7 @@
             <plugin>
                 <groupId>org.liquibase</groupId>
                 <artifactId>liquibase-maven-plugin</artifactId>
-                <version>3.5.1</version>
+                <version>${liquibase.version}</version>
                 <configuration>
                     <!-- Config for xml. Change to 'classpath:liquibase/groovy/liquibase.properties' for groovy example-->
                     <propertyFile>classpath:liquibase/xml/liquibase.properties</propertyFile>
