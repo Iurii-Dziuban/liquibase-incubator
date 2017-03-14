@@ -82,20 +82,20 @@
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-log4j12</artifactId>
-            <version>1.7.23</version>
+            <version>1.7.24</version>
         </dependency>
 
         <!-- groovy dsl support libraries-->
         <dependency>
             <groupId>org.liquibase</groupId>
             <artifactId>liquibase-groovy-dsl</artifactId>
-            <version>1.2.1</version>
+            <version>1.2.2</version>
         </dependency>
 
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy</artifactId>
-            <version>2.4.8</version>
+            <version>2.4.9</version>
             <scope>compile</scope>
         </dependency>
 
