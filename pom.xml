@@ -11,7 +11,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <spring-version>4.3.7.RELEASE</spring-version>
+        <spring-version>4.3.8.RELEASE</spring-version>
         <liquibase.version>3.5.3</liquibase.version>
     </properties>
 
@@ -61,7 +61,7 @@
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
-            <version>1.4.194</version>
+            <version>1.4.195</version>
         </dependency>
 
         <!-- liquibase -->
@@ -95,7 +95,7 @@
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy</artifactId>
-            <version>2.4.10</version>
+            <version>2.4.11</version>
             <scope>compile</scope>
         </dependency>
 
@@ -129,7 +129,7 @@
 
             <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.19.1</version>
+                <version>2.20</version>
                 <configuration>
                     <argLine>${argLine}</argLine>
                 </configuration>
