@@ -10,6 +10,10 @@ A project with demo of liquibase capabilities with spring framework based on htt
 
 H2 database is used in demo org.liquibase.samples because of ease of use
 
+# Checks
+
+Jacoco code coverage, pmd, checkstyle, enforcer, findbugs
+
 # Project structure
 Project structure is simple. Basically it is a maven project:
 - Samples under `src/test/java/org.liquibase.org.samples`

@@ -2,14 +2,11 @@ package org.liquibase.samples;
 
 import liquibase.Liquibase;
 import liquibase.database.Database;
-import liquibase.database.DatabaseConnection;
 import liquibase.database.DatabaseFactory;
-import liquibase.database.OfflineConnection;
 import liquibase.database.jvm.JdbcConnection;
 import liquibase.exception.DatabaseException;
 import liquibase.exception.LiquibaseException;
 import liquibase.integration.spring.SpringLiquibase;
-import liquibase.resource.ResourceAccessor;
 import org.springframework.context.ApplicationContext;
 
 import java.sql.Connection;
@@ -24,12 +21,12 @@ public class CustomLiquibaseFactory {
         SpringLiquibase springLiquibase = new SpringLiquibase();
         springLiquibase.setResourceLoader(context);
         SpringLiquibase.SpringResourceOpener resourceAccessor = springLiquibase.new SpringResourceOpener(changeLogFilename);
-        Liquibase liquibase = new Liquibase(changeLogFilename, resourceAccessor, createDatabase(c, resourceAccessor));
+        Liquibase liquibase = new Liquibase(changeLogFilename, resourceAccessor, createDatabase(c));
         liquibase.setIgnoreClasspathPrefix(true);
         return liquibase;
     }
 
-    private Database createDatabase(Connection c, ResourceAccessor resourceAccessor) throws DatabaseException {
+    private Database createDatabase(Connection c) throws DatabaseException {
         return DatabaseFactory.getInstance().findCorrectDatabaseImplementation(new JdbcConnection(c));
     }
 }

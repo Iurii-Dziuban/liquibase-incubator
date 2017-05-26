@@ -18,7 +18,8 @@ import java.sql.SQLException;
  */
 
 /**
- * Programmatic example to use SpringLiquibase for migrations. Configuring liquibase class programmatically to invoke specific methods, for instance, rollback
+ * Programmatic example to use SpringLiquibase for migrations.
+ * Configuring liquibase class programmatically to invoke specific methods, for instance, rollback
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:liquibase/xml/xml-dsl-application-context.xml"})
@@ -35,7 +36,8 @@ public class XmlDslLiquibaseSpringTest {
         applicationContext.getBean(SpringLiquibase.class);
 
         // Only for test purposes...
-        Liquibase liquibase = new CustomLiquibaseFactory().createLiquibase(dataSource.getConnection(), applicationContext, CHANGE_LOG_FILENAME);
+        Liquibase liquibase = new CustomLiquibaseFactory().createLiquibase(dataSource.getConnection(),
+                applicationContext, CHANGE_LOG_FILENAME);
         liquibase.rollback("1.0", "test, production");
     }
 
