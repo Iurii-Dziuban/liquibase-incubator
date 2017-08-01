@@ -10,6 +10,13 @@ A project with demo of liquibase capabilities with spring framework based on htt
 
 H2 database is used in demo org.liquibase.samples because of ease of use
 
+## Table of contents:
+ * [Static Analysis QA Checks](#checks)
+ * [Project structure](#project-structure)
+ * [Libraries](#pomxml)
+ * [Building project](#building-project)
+ * [Features](#features)
+ 
 # Checks
 
 Jacoco code coverage, pmd, checkstyle, enforcer, findbugs
@@ -38,7 +45,7 @@ Libraries:
 # Building project
 `mvn clean package`
 
-# Demo & Features
+# Features
 
 - `XmlDslLiquibaseSpringTest` based on xml implementation as default and declarative.
 - `GroovyDslLiquibaseSpringTest` based on groovy dsl implementation with power to include groovy code
