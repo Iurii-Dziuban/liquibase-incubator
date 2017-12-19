@@ -6,6 +6,8 @@
 [![Dependency Status](https://www.versioneye.com/user/projects/57b8ae91fc18270041a9aa9c/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/57b8ae91fc18270041a9aa9c)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/Iurii-Dziuban/liquibase-incubator/issues)
 
+liquibase-incubator with feature examples for http://www.liquibase.org/
+
 A project with demo of liquibase capabilities with spring framework based on http://www.liquibase.org/documentation/spring.html
 
 H2 database is used in demo `org.liquibase.samples` because of ease of use
@@ -20,7 +22,7 @@ H2 database is used in demo `org.liquibase.samples` because of ease of use
  
 # Checks
 
-Jacoco/cobertura code coverage, pmd, checkstyle, enforcer, findbugs
+`Jacoco`/`cobertura` code coverage, `pmd`, `checkstyle`, `enforcer`, `findbugs`
 
 # Project structure
 Project structure is simple. Basically, it is a maven project:
