@@ -8,7 +8,7 @@
 
 A project with demo of liquibase capabilities with spring framework based on http://www.liquibase.org/documentation/spring.html
 
-H2 database is used in demo org.liquibase.samples because of ease of use
+H2 database is used in demo `org.liquibase.samples` because of ease of use
 
 ## Table of contents:
  * [Static Analysis QA Checks](#checks)
@@ -16,31 +16,34 @@ H2 database is used in demo org.liquibase.samples because of ease of use
  * [Libraries](#pomxml)
  * [Building project](#building-project)
  * [Features](#features)
+ * [Ideas to try](#ideas)
  
 # Checks
 
-Jacoco code coverage, pmd, checkstyle, enforcer, findbugs
+Jacoco/cobertura code coverage, pmd, checkstyle, enforcer, findbugs
 
 # Project structure
-Project structure is simple. Basically it is a maven project:
-- Samples under `src/test/java/org.liquibase.org.samples`
+Project structure is simple. Basically, it is a maven project:
+- Samples under `src/test/java/org.liquibase.samples`
 
 Resources
-- DB scripts with test tables and data `src/main/resources/db-scripts`
-- Spring application contexts used in the org.liquibase.samples under `src/main/resources/liquibase`
+- DB scripts with test tables and data `src/main/resources/liquibase` under `groovy`/`xml` packages
+- Spring application contexts used in the `org.liquibase.samples` under `src/main/resources/liquibase`
 - Liquibase properties under `src/main/resources/liquibase` used by changelog `groovy/datasetChangeLog.groovy` and `xml/datasetChangeLog.xml` additional changelog file `db.changelog-included.xml`
-- Log4j configuration under `src/main/resources/log4j.xml`
+- Logging done via liquibase logging extensions via slf4j using Log4j configuration under `src/main/resources/log4j.xml` and `src/test/resources/log4j.xml`
+Based on `https://liquibase.jira.com/wiki/spaces/CONTRIB/pages/38797319/SLF4J+Logging+Extension` site with liquibase extensions
 
 # Pom.xml
 Libraries:
 - liquibase
 - liquibase groovy dsl
-- groovy
+- liquibase slf4j extension
+- groovy (for dsl)
 - spring framework
 - spring jdbc for spring jdbc migrations
-- commons-dbcp2 for database connection pool
+- commons-dbcp2 for database connection pool (other pools can be used as well)
 - h2 file based database for ease of db usage
-- log4j logging (possibility to configure) via slf4j
+- log4j logging (possibility to configure) via slf4j extension of liquibase
 
 # Building project
 `mvn clean package`
@@ -51,7 +54,7 @@ Libraries:
 - `GroovyDslLiquibaseSpringTest` based on groovy dsl implementation with power to include groovy code
 No parameters required. Just run the main method in the class
 
-`Comments in the files and logging should be sufficient to play with org.liquibase.samples to see results and experiment with sql migrations`
+**Note**: Comments in the files and logging should be sufficient to play with `org.liquibase.samples` to see results and experiment with sql migrations`
 
 ## Features covered
 - Liquibase maven plugin usage
@@ -67,5 +70,8 @@ No parameters required. Just run the main method in the class
 - Usage of runOnChange runInTransaction for particular change
 - Usage of tags
 - Usage of default rollback & rollback file generation
-- Meta tables databasechangelog and databasechangeloglock creation
-- Log4j integration
+- Meta tables `databasechangelog` and `databasechangeloglock` creation
+- Log4j integration via slf4j extension of liquibase
+
+# Ideas
+- Try extensions/integrations from https://liquibase.jira.com/wiki/spaces/CONTRIB/overview
